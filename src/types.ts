@@ -4,4 +4,5 @@ export interface Task {
   id: string;
   status: TaskStatus;
   value: string;
+  order: number;
 }
