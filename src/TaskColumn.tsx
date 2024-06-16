@@ -2,16 +2,17 @@ import type { FC } from "react";
 import { TaskAddButton } from "./TaskAddButton";
 import styles from "./TaskColumn.module.css";
 import TaskItem from "./TaskItem";
-import type { Task, TaskStatus } from "./types";
+import { filteredTasks, useTasks } from "./taskStore";
+import type { TaskStatus } from "./types";
 
 interface Props {
   status: TaskStatus;
 }
 
-// TODO
-const tasks: Task[] = [];
-
 const TaskColumn: FC<Props> = ({ status }) => {
+  const snapshot = useTasks();
+  const tasks = filteredTasks(status, snapshot);
+
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.heading}>{status}</h2>
@@ -20,7 +21,7 @@ const TaskColumn: FC<Props> = ({ status }) => {
           <TaskItem key={task.id} task={task} />
         ))}
         <li>
-          <TaskAddButton />
+          <TaskAddButton status={status} />
         </li>
       </ul>
     </div>
