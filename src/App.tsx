@@ -1,7 +1,18 @@
-import "./App.css";
+import type { FC } from "react";
+import styles from "./App.module.css";
+import TaskColumn from "./TaskColumn";
 
-function App() {
-  return <>hello world</>;
-}
+const App: FC = () => {
+  return (
+    <div className={styles.wrapper}>
+      <h1 className={styles.heading}>Project Kanban Board</h1>
+      <div className={styles.grid}>
+        <TaskColumn status="To Do" />
+        <TaskColumn status="In Progress" />
+        <TaskColumn status="Done" />
+      </div>
+    </div>
+  );
+};
 
 export default App;
