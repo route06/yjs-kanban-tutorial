@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-websocket": "y-websocket --port 1234",
     "build": "tsc && vite build",
     "fmt": "biome check --write ",
     "preview": "vite preview"
