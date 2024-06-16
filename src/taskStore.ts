@@ -18,5 +18,13 @@ export const addTask = (status: TaskStatus) => {
   };
 };
 
+export const updateTask = (id: string, status: TaskStatus, value: string) => {
+  const task = taskStore[id];
+  if (task) {
+    task.status = status;
+    task.value = value;
+  }
+};
+
 export const filteredTasks = (status: TaskStatus, taskStore: TaskStore) =>
   Object.values(taskStore).filter((task) => task.status === status);

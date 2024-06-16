@@ -1,5 +1,6 @@
-import type { FC } from "react";
+import { type ChangeEvent, type FC, useCallback } from "react";
 import styles from "./TaskItem.module.css";
+import { updateTask } from "./taskStore";
 import type { Task } from "./types";
 
 interface Props {
@@ -7,6 +8,13 @@ interface Props {
 }
 
 const TaskItem: FC<Props> = ({ task }) => {
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
+      updateTask(task.id, task.status, event.target.value);
+    },
+    [task],
+  );
+
   return (
     <li className={styles.listitem}>
       <button type="button" className={styles.button}>
@@ -29,7 +37,7 @@ const TaskItem: FC<Props> = ({ task }) => {
           <circle cx="15" cy="19" r="1" />
         </svg>
       </button>
-      <textarea className={styles.textarea} defaultValue={task.value} />
+      <textarea className={styles.textarea} defaultValue={task.value} onChange={handleChange} />
     </li>
   );
 };
