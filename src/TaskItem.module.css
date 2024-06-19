@@ -9,6 +9,10 @@
   transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.isDragging {
+  opacity: 0.7;
+}
+
 .textarea {
   width: 100%;
   box-sizing: border-box;

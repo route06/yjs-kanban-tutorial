@@ -1,3 +1,5 @@
+import { useDraggable } from "@dnd-kit/core";
+import { CSS } from "@dnd-kit/utilities";
 import { type ChangeEvent, type FC, useCallback } from "react";
 import styles from "./TaskItem.module.css";
 import { updateTask } from "./taskStore";
@@ -8,6 +10,12 @@ interface Props {
 }
 
 const TaskItem: FC<Props> = ({ task }) => {
+  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+    id: task.id,
+  });
+  const style = {
+    transform: CSS.Translate.toString(transform),
+  };
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLTextAreaElement>) => {
       updateTask(task.id, task.status, event.target.value);
@@ -16,8 +24,12 @@ const TaskItem: FC<Props> = ({ task }) => {
   );
 
   return (
-    <li className={styles.listitem}>
-      <button type="button" className={styles.button}>
+    <li
+      className={`${styles.listitem} ${isDragging ? styles.isDragging : ""}`}
+      ref={setNodeRef}
+      style={style}
+    >
+      <button type="button" className={styles.button} {...listeners} {...attributes}>
         <svg
           width="24"
           height="24"
