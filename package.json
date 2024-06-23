@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "nanoid": "^5.0.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "valtio": "^1.13.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.1",
