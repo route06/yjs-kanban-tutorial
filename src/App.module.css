@@ -1,0 +1,16 @@
+.wrapper {
+  margin: auto;
+  padding: 0.5rem;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
