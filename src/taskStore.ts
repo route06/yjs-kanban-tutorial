@@ -41,3 +41,12 @@ export const updateTask = (id: string, value: string) => {
     task.value = value;
   }
 };
+
+export const moveTask = (id: string, status: TaskStatus, prevId?: string, nextId?: string) => {
+  const order = computeOrder(prevId, nextId);
+  const task = taskStore[id];
+  if (task) {
+    task.status = status;
+    task.order = order;
+  }
+};
