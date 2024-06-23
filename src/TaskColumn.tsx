@@ -21,7 +21,7 @@ export const TaskColumn: FC<Props> = ({ status }) => {
           <TaskItem key={task.id} task={task} />
         ))}
       </ul>
-      <TaskAddButton />
+      <TaskAddButton status={status} />
     </div>
   );
 };

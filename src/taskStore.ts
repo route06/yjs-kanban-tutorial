@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { proxy, useSnapshot } from "valtio";
 import type { Task, TaskStatus } from "./types";
 
@@ -11,3 +12,14 @@ export const filteredTasks = (status: TaskStatus, taskStore: TaskStore): Task[] 
 export const taskStore = proxy<TaskStore>({});
 
 export const useTasks = () => useSnapshot(taskStore);
+
+export const addTask = (status: TaskStatus) => {
+  const order = 0; // dummy
+  const id = nanoid();
+  taskStore[id] = {
+    id,
+    status,
+    value: "",
+    order,
+  };
+};
