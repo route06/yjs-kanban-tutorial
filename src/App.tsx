@@ -1,8 +1,11 @@
 import type { FC } from "react";
 import styles from "./App.module.css";
 import { TaskColumn } from "./TaskColumn";
+import { useSyncToYjsEffect } from "./yjs/useSyncToYjsEffect";
 
 const App: FC = () => {
+  useSyncToYjsEffect();
+
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.heading}>Projects / Board</h1>
