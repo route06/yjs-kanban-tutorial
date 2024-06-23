@@ -1,0 +1,22 @@
+.button {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--rounded-sm);
+  padding: 0.375rem;
+  background-color: var(--zinc-950);
+  color: var(--zinc-400);
+  font-size: 0.75rem;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover {
+  background-color: var(--zinc-900);
+}
+
+.button:focus-visible {
+  outline: 1px solid var(--zinc-400);
+  border-radius: var(--rounded-sm);
+}
