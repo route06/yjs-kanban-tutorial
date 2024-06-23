@@ -10,7 +10,7 @@ interface Props {
 export const TaskAddButton: FC<Props> = ({ status }) => {
   return (
     <button type="button" className={styles.button} onClick={() => addTask(status)}>
-      +
+      + Add
     </button>
   );
 };

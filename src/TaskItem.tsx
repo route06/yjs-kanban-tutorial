@@ -17,7 +17,7 @@ const TaskItem: FC<Props> = ({ task }) => {
     transform: CSS.Translate.toString(transform),
   };
   const handleChange = useCallback(
-    (event: ChangeEvent<HTMLTextAreaElement>) => {
+    (event: ChangeEvent<HTMLInputElement>) => {
       updateTask(task.id, task.status, event.target.value);
     },
     [task],
@@ -49,7 +49,7 @@ const TaskItem: FC<Props> = ({ task }) => {
           <circle cx="15" cy="19" r="1" />
         </svg>
       </button>
-      <textarea className={styles.textarea} defaultValue={task.value} onChange={handleChange} />
+      <input className={styles.input} defaultValue={task.value} onChange={handleChange} />
     </li>
   );
 };

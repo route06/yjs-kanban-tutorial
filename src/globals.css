@@ -1,0 +1,27 @@
+:root {
+  font-family: "Inter", sans-serif;
+
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-400: #a1a1aa;
+  --zinc-100: #f4f4f5;
+  --rounded-md: 0.375rem;
+  --rounded-sm: 0.25rem;
+  --rounded-xs: 0.125rem;
+}
+
+html {
+  background-color: var(--zinc-900);
+}
+
+body {
+  color: var(--zinc-100);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}

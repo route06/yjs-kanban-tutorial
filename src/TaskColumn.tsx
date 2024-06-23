@@ -30,8 +30,8 @@ const TaskColumn: FC<Props> = ({ status }) => {
             />
           </Fragment>
         ))}
-        <TaskAddButton status={status} />
       </ul>
+      <TaskAddButton status={status} />
     </div>
   );
 };

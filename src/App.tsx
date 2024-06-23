@@ -10,7 +10,7 @@ const App: FC = () => {
   return (
     <DndProvider>
       <div className={styles.wrapper}>
-        <h1 className={styles.heading}>Project Kanban Board</h1>
+        <h1 className={styles.heading}>Projects / Board</h1>
         <div className={styles.grid}>
           <TaskColumn status="To Do" />
           <TaskColumn status="In Progress" />
