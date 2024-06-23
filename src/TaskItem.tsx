@@ -1,5 +1,6 @@
-import type { FC } from "react";
+import { type ChangeEvent, type FC, useCallback } from "react";
 import styles from "./TaskItem.module.css";
+import { updateTask } from "./taskStore";
 import type { Task } from "./types";
 
 interface Props {
@@ -7,6 +8,13 @@ interface Props {
 }
 
 export const TaskItem: FC<Props> = ({ task }) => {
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      updateTask(task.id, event.target.value);
+    },
+    [task],
+  );
+
   return (
     <li className={styles.listitem}>
       <button type="button" className={styles.button}>
@@ -29,7 +37,7 @@ export const TaskItem: FC<Props> = ({ task }) => {
           <circle cx="15" cy="19" r="1" />
         </svg>
       </button>
-      <input className={styles.input} value={task.value} />
+      <input className={styles.input} value={task.value} onChange={handleChange} />
     </li>
   );
 };

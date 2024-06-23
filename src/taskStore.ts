@@ -23,3 +23,10 @@ export const addTask = (status: TaskStatus) => {
     order,
   };
 };
+
+export const updateTask = (id: string, value: string) => {
+  const task = taskStore[id];
+  if (task) {
+    task.value = value;
+  }
+};
