@@ -1,0 +1,24 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.cursor {
+  position: absolute;
+  display: flex;
+}
+
+.svg {
+  width: 16px;
+  height: 16px;
+}
+
+.name {
+  font-size: 0.6rem;
+  padding: 0.05rem 0.2rem;
+  margin-top: 1rem;
+  border-radius: var(--rounded-xs);
+}

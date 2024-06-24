@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import { TaskColumn } from "./TaskColumn";
 import { DndProvider } from "./dnd/DndProvider";
 import { useSyncToYjsEffect } from "./yjs/useSyncToYjsEffect";
+import { Cursors } from "./yjs/Cursors";
 
 const App: FC = () => {
   useSyncToYjsEffect();
@@ -16,6 +17,7 @@ const App: FC = () => {
           <TaskColumn status="In Progress" />
           <TaskColumn status="Done" />
         </div>
+        <Cursors />
       </div>
     </DndProvider>
   );
