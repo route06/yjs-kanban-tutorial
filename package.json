@@ -17,7 +17,7 @@
     "react-dom": "^18.2.0",
     "valtio": "^1.13.2",
     "valtio-yjs": "^0.5.1",
-    "y-websocket": "^2.0.3",
+    "y-webrtc": "^10.3.0",
     "yjs": "^13.6.18"
   },
   "devDependencies": {
